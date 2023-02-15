@@ -10,3 +10,5 @@ player.on('play', function () {
 player.getVideoTitle().then(function (title) {
   console.log('title:', title);
 });
+
+const a = a;
