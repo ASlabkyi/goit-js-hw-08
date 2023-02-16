@@ -9,7 +9,7 @@ const galleryListEl = document.querySelector('.gallery');
 let lightbox = null;
 
 galleryListEl.innerHTML = createGalleryList(galleryItems);
-galleryListEl.addEventListener('click', handleImgClick);
+// galleryListEl.addEventListener('click', handleImgClick);
 
 function handleImgClick(e) {
   e.preventDefault();
