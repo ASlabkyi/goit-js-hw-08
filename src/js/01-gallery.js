@@ -2,22 +2,12 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryItems } from './gallery-items';
 
-import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const galleryListEl = document.querySelector('.gallery');
-let lightbox = null;
 
 galleryListEl.innerHTML = createGalleryList(galleryItems);
-// galleryListEl.addEventListener('click', handleImgClick);
-
-function handleImgClick(e) {
-  e.preventDefault();
-
-  if (checkIfImg(e.target)) return;
-
-  createLightbox();
-}
+galleryListEl.addEventListener('click', galleryListEl);
 
 function createGalleryList(element) {
   return element
@@ -33,13 +23,7 @@ function createGalleryList(element) {
     .join('');
 }
 
-function checkIfImg(element) {
-  return element.nodeName !== 'IMG';
-}
-
-function createLightbox() {
-  lightbox = new SimpleLightbox('.gallery a', {
-    captionDelay: 250,
-    captionsData: 'alt',
-  });
-}
+new SimpleLightbox('.gallery a', {
+  captionDelay: 250,
+  captionsData: 'alt',
+});
