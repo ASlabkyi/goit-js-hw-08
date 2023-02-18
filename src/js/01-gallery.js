@@ -4,24 +4,24 @@ import { galleryItems } from './gallery-items';
 
 // Change code below this line
 
-const galleryListEl = document.querySelector('.gallery');
-
-galleryListEl.innerHTML = createGalleryList(galleryItems);
-galleryListEl.addEventListener('click', galleryListEl);
+// galleryListEl.innerHTML = createGalleryList(galleryItems);
+// galleryListEl.addEventListener('click', galleryListEl);
 
 function createGalleryList(element) {
   return element
     .map(
       ({ original, preview, description }) => `
-   <div class="gallery__item">
    <a class="gallery__item" href=${original}>
    <img class="gallery__image" src=${preview} alt=${description} />
  </a>
-        </div>
    `
     )
     .join('');
 }
+
+document
+  .querySelector('.gallery')
+  .insertAdjacentElement('beforeend', createGalleryList);
 
 new SimpleLightbox('.gallery a', {
   captionDelay: 250,
